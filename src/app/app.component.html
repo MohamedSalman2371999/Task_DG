@@ -1,0 +1,65 @@
+<!-- <form [formGroup]="form">
+  <label for="country">Country:</label>
+  <select id="country" formControlName="country">
+    <option value="">Select Country</option>
+    <option *ngFor="let country of countries" [value]="country">
+      {{ country }}
+    </option>
+  </select>
+
+  <div *ngIf="states.length > 0">
+    <label for="state">State:</label>
+    <select id="state" formControlName="state">
+      <option value="">Select State</option>
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+</form>
+
+<div class="mt-3">
+  <strong>Form Value:</strong>
+  <pre>{{ form.value | json }}</pre>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<form [formGroup]="form1" (ngSubmit)="onSubmit()">
+  <div formArrayName="emails">
+    <div *ngFor="let email of emails.controls; let i = index">
+      <input [formControlName]="i" placeholder="أدخل البريد الإلكتروني" />
+      <button type="button" (click)="removeField(i)" *ngIf="emails.length > 1">
+        حذف
+      </button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addField()">إضافة حقل</button>
+  <button type="submit">إرسال</button>
+</form>
+
+<pre>{{ form1.value | json }}</pre>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br /> -->
+
+
+<router-outlet></router-outlet>
+
+<!-- <div class="card flex justify-content-center" *ngIf="!selectedDesign">
+    <p-dropdown 
+        [options]="Designs" 
+        [(ngModel)]="selectedDesign" 
+        optionLabel="name"
+        (onChange)="onDesignChange()"
+        placeholder="Select a Design" />
+</div>
+
+<ng-template #dynamicComponent></ng-template> -->

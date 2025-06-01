@@ -1,0 +1,92 @@
+<div [formGroup]="parentForm" class="step-content">
+  <div class="field">
+    <label for="firstName">First Name</label>
+    <input
+      id="firstName"
+      type="text"
+      pInputText
+      formControlName="firstName"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('firstName')?.errors?.['required'] && parentForm.get('firstName')?.touched"
+    >
+      First name is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="lastName">Last Name</label>
+    <input
+      id="lastName"
+      type="text"
+      pInputText
+      formControlName="lastName"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('lastName')?.errors?.['required'] && parentForm.get('lastName')?.touched"
+    >
+      Last name is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      pInputText
+      formControlName="email"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('email')?.errors?.['required'] && parentForm.get('email')?.touched"
+    >
+      Email is required
+    </small>
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('email')?.errors?.['email'] && parentForm.get('email')?.touched"
+    >
+      Please enter a valid email
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="phone">Phone</label>
+    <input
+      id="phone"
+      type="tel"
+      pInputText
+      formControlName="phone"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('phone')?.errors?.['required'] && parentForm.get('phone')?.touched"
+    >
+      Phone number is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="address">Address</label>
+    <input
+      id="address"
+      type="text"
+      pInputText
+      formControlName="address"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('address')?.errors?.['required'] && parentForm.get('address')?.touched"
+    >
+      Address is required
+    </small>
+  </div>
+</div>

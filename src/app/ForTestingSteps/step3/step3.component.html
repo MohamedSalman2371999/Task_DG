@@ -1,0 +1,86 @@
+<div [formGroup]="parentForm" class="step-content">
+  <div class="field">
+    <label for="interests">Interests</label>
+    <input
+      id="interests"
+      type="text"
+      pInputText
+      formControlName="interests"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('interests')?.errors?.['required'] && parentForm.get('interests')?.touched"
+    >
+      Interests are required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="bio">Bio</label>
+    <textarea
+      id="bio"
+      pInputTextarea
+      formControlName="bio"
+      rows="4"
+      class="w-100"
+    ></textarea>
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('bio')?.errors?.['required'] && parentForm.get('bio')?.touched"
+    >
+      Bio is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="linkedin">LinkedIn Profile</label>
+    <input
+      id="linkedin"
+      type="url"
+      pInputText
+      formControlName="linkedin"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('linkedin')?.errors?.['required'] && parentForm.get('linkedin')?.touched"
+    >
+      LinkedIn profile is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="twitter">Twitter Profile</label>
+    <input
+      id="twitter"
+      type="url"
+      pInputText
+      formControlName="twitter"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('twitter')?.errors?.['required'] && parentForm.get('twitter')?.touched"
+    >
+      Twitter profile is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="website">Personal Website</label>
+    <input
+      id="website"
+      type="url"
+      pInputText
+      formControlName="website"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('website')?.errors?.['required'] && parentForm.get('website')?.touched"
+    >
+      Website URL is required
+    </small>
+  </div>
+</div>

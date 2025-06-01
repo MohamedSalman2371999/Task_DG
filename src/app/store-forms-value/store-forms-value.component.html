@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>Auto-Restore Form Demo</h2>
+  <form [formGroup]="userForm" class="form">
+    <div class="form-row" *ngFor="let item of formFields">
+      @if (item.type !== 'radio' && item.type !== 'dropdown') {
+      <div class="form-group">
+        <label>{{ item.label }} *</label>
+        <input
+          [formControlName]="item.id"
+          [type]="item.type"
+          [placeholder]="'Enter ' + item.label"
+        />
+      </div>
+      } @else if (item.type === 'radio') {
+      <div class="form-group">
+        <label>{{ item.label }} *</label>
+        <div *ngFor="let option of item.options">
+          <label>
+            <input
+              type="radio"
+              [name]="item.id"
+              [formControlName]="item.id"
+              [value]="option.value"
+            />
+            {{ option.label }}
+          </label>
+        </div>
+      </div>
+      } @else if (item.type === 'dropdown') {
+      <div class="form-group">
+        <label>{{ item.label }} *</label>
+        <select [formControlName]="item.id">
+          <option value="" disabled selected>Select {{ item.label }}</option>
+          <option *ngFor="let opt of item.options" [value]="opt.value">
+            {{ opt.label }}
+          </option>
+        </select>
+      </div>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="button" (click)="clearForm()" class="btn-secondary">
+        Clear Form
+      </button>
+      <button type="button" (click)="navegateToTab1()" class="btn-secondary">
+        navegateToTab1
+      </button>
+      <button
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="userForm.invalid"
+        class="btn-primary"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <!-- <div class="status-panel">
+        <div class="status-item">
+          <strong>Auto-Save Status:</strong> 
+          <span [class]="'status-' + saveStatus.toLowerCase()">{{ saveStatus }}</span>
+        </div>
+        <div class="status-item">
+          <strong>Last Saved:</strong> {{ lastSaved | date:'medium' }}
+        </div>
+        <div class="status-item">
+          <strong>Form Valid:</strong> 
+          <span [class]="userForm.valid ? 'status-valid' : 'status-invalid'">
+            {{ userForm.valid ? 'Yes' : 'No' }}
+          </span>
+        </div>
+      </div> -->
+</div>

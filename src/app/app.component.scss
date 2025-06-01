@@ -1,0 +1,386 @@
+@import "bootstrap/scss/bootstrap";
+
+.pagination {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination span {
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+
+  th {
+    background-color: #f8f9fa;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+
+  .form-range::-webkit-slider-thumb {
+    background: #0d6efd;
+  }
+
+  .form-range::-moz-range-thumb {
+    background: #0d6efd;
+  }
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-actions button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.table-actions button:hover {
+  background-color: #0056b3;
+}
+
+.table-actions button.delete {
+  background-color: #dc3545;
+}
+
+.table-actions button.delete:hover {
+  background-color: #a71d2a;
+}
+.search-bar {
+  width: max-content;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px;
+}
+
+:host ::ng-deep {
+  .p-datatable .search-bar .form-control {
+    background: white;
+    border-radius: 0px !important;
+    padding: 0.4rem 1rem !important;
+  }
+  button.p-ripple.p-element.p-button.p-component.p-button-outlined {
+    border-radius: 0px !important;
+    padding: 0.6rem 1rem !important;
+  }
+  .p-datatable td .p-progressbar {
+    height: 1rem !important;
+    /* border-radius: 0; */
+  }
+  .p-datatable {
+    .p-datatable-header {
+      padding: 1rem;
+      background: #f8f9fa;
+    }
+
+    .search-bar {
+      .form-control {
+        background: white;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+
+        i {
+          color: #6c757d;
+        }
+
+        input {
+          &::placeholder {
+            color: #9ca3af;
+          }
+        }
+      }
+    }
+
+    th {
+      background: #f8f9fa;
+      &:hover {
+        background: #e9ecef;
+      }
+    }
+
+    .p-column-filter {
+      width: 2rem;
+      height: 2rem;
+      color: #6c757d;
+    }
+
+    td {
+      .flag {
+        border-radius: 2px;
+      }
+
+      .p-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .p-progressbar {
+        height: 0.5rem;
+      }
+
+      .pi {
+        font-size: 1.25rem;
+
+        &.text-green-500 {
+          color: #22c55e;
+        }
+
+        &.text-red-500 {
+          color: #ef4444;
+        }
+      }
+    }
+  }
+
+  .p-dialog {
+    .field {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #374151;
+      }
+
+      &.invalid {
+        input {
+          border-color: #ef4444;
+        }
+      }
+    }
+  }
+
+  .p-confirm-dialog {
+    .p-dialog-content {
+      padding: 2rem;
+    }
+  }
+}
+
+// Toast styling
+.toast-container {
+  z-index: 1056;
+}
+
+// Modal custom styling
+.modal {
+  .invalid-feedback {
+    display: block;
+  }
+}
+
+// Custom status badges
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+
+  &.qualified {
+    background-color: #198754;
+    color: white;
+  }
+  &.new {
+    background-color: #0dcaf0;
+    color: white;
+  }
+  &.negotiation {
+    background-color: #ffc107;
+    color: black;
+  }
+  &.renewal {
+    background-color: #0d6efd;
+    color: white;
+  }
+  &.proposal {
+    background-color: #dc3545;
+    color: white;
+  }
+}
+
+// Activity progress bar
+.progress {
+  height: 0.5rem;
+}
+
+.filter-modal {
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .modal-title {
+    color: #495057;
+    font-weight: 500;
+  }
+
+  .form-control {
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+      border-color: #86b7fe;
+    }
+  }
+}
+
+.filter-button {
+  margin-bottom: 1rem;
+}
+
+// .sideComponent{
+// width: fit-content;
+// height: 100%;
+  
+// }
+.full-width {
+  width: auto;
+  margin-top: 100px;
+}
+:host {
+  display: block;
+}
+button.btn.btn-primary.ng-star-inserted {
+  padding: 0 0 0 15px;
+}
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: #0d6efd;
+  text-decoration-thickness: 2px;
+}
+.tab-container {
+  // max-width: 700px;
+  // margin: 40px auto;
+  background: #fff;
+  border-radius: 8px;
+  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  background: #F8F9FA;
+  width: -webkit-fill-available;
+}
+
+.tab-header button {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-header button:hover {
+  background-color: #f2f2f2;
+}
+
+.tab-header button.active {
+  border-bottom: 3px solid #007bff;
+  background-color: #e6f0ff;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+}
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  user-select: none;
+}
+
+.left-pane{
+  height: 100%;
+  overflow: auto;
+  transition: width 0.2s;
+  z-index: 1;
+}
+.right-pane {
+  height: 100%;
+  overflow: auto;
+  transition: width 0.2s;
+  background: #F8F9FA;
+}
+
+.resizer {
+  width: 6px;
+  cursor: col-resize;
+  background-color: #ccc;
+  position: relative;
+  z-index: 99999;
+}
+.showHideSideComponent {
+  z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: 3% !important;
+  left: -13px !important;
+}
+th, td {
+    font-size: 14px;
+}

@@ -1,0 +1,86 @@
+<div [formGroup]="parentForm" class="step-content">
+  <div class="field">
+    <label for="company">Company</label>
+    <input
+      id="company"
+      type="text"
+      pInputText
+      formControlName="company"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('company')?.errors?.['required'] && parentForm.get('company')?.touched"
+    >
+      Company is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="jobTitle">Job Title</label>
+    <input
+      id="jobTitle"
+      type="text"
+      pInputText
+      formControlName="jobTitle"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('jobTitle')?.errors?.['required'] && parentForm.get('jobTitle')?.touched"
+    >
+      Job title is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="experience">Years of Experience</label>
+    <p-inputNumber
+      id="experience"
+      formControlName="experience"
+      [min]="0"
+      [showButtons]="true"
+      class="w-100"
+    ></p-inputNumber>
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('experience')?.errors?.['required'] && parentForm.get('experience')?.touched"
+    >
+      Experience is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="department">Department</label>
+    <input
+      id="department"
+      type="text"
+      pInputText
+      formControlName="department"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('department')?.errors?.['required'] && parentForm.get('department')?.touched"
+    >
+      Department is required
+    </small>
+  </div>
+
+  <div class="field">
+    <label for="skills">Skills</label>
+    <input
+      id="skills"
+      type="text"
+      pInputText
+      formControlName="skills"
+      class="w-100"
+    />
+    <small
+      class="text-danger"
+      *ngIf="parentForm.get('skills')?.errors?.['required'] && parentForm.get('skills')?.touched"
+    >
+      Skills are required
+    </small>
+  </div>
+</div>
